@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Canon Roses — Premium Kenyan Roses</title>
+  <meta name="description" content="Canon Roses cultivates and exports premium fresh-cut roses from Kenya to wholesalers worldwide." />
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome (free icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Pro (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     /* ============================================================
-       styles.css — Canon Roses (complete)
+       Canon Roses — Professional Stylesheet
        ============================================================ */
     /* ----- reset & base ----- */
     * {
@@ -22,38 +23,61 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: #fcf9f6;
-      color: #1e1e1e;
-      line-height: 1.5;
+      background: #fcf8f4;
+      color: #1e1a16;
+      line-height: 1.6;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3, h4, .font-display {
       font-family: 'Cormorant Garamond', serif;
       letter-spacing: -0.02em;
+      font-weight: 600;
     }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
+    }
+    .section-padding { padding: 6rem 0; }
+    @media (max-width: 768px) { .section-padding { padding: 4rem 0; } }
+
+    /* ----- colors ----- */
+    :root {
+      --primary: #8a3b2c;
+      --primary-light: #b45f3b;
+      --primary-dark: #5a2419;
+      --accent: #d4a373;
+      --accent-light: #f0e1d0;
+      --surface: #f8f2ec;
+      --background: #fcf8f4;
+      --card: #ffffff;
+      --text: #1e1a16;
+      --text-muted: #6b5e54;
+      --border: #e5dbd3;
+      --shadow-soft: 0 8px 40px rgba(0,0,0,0.04);
+      --shadow-elegant: 0 20px 60px -12px rgba(0,0,0,0.12);
+      --shadow-hover: 0 24px 64px -16px rgba(138,59,44,0.15);
     }
 
-    /* ----- colors & utilities ----- */
-    .text-primary { color: #b45f3b; }
-    .bg-primary { background: #b45f3b; }
-    .bg-surface { background: #f5efe9; }
-    .bg-background { background: #fcf9f6; }
+    /* ----- utilities ----- */
+    .text-primary { color: var(--primary); }
+    .bg-primary { background: var(--primary); }
+    .bg-surface { background: var(--surface); }
+    .bg-background { background: var(--background); }
     .bg-foreground { background: #1e1a16; }
-    .text-muted { color: #6b5e54; }
-    .border-muted { border-color: #e5dbd3; }
-    .shadow-soft { box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
-    .shadow-elegant { box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15); }
+    .text-muted { color: var(--text-muted); }
+    .border-muted { border-color: var(--border); }
+    .shadow-soft { box-shadow: var(--shadow-soft); }
+    .shadow-elegant { box-shadow: var(--shadow-elegant); }
     .rounded-full { border-radius: 9999px; }
-    .transition { transition: all 0.2s ease; }
+    .transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .gap-2 { gap: 0.5rem; }
     .gap-4 { gap: 1rem; }
     .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
     .flex { display: flex; }
     .flex-col { flex-direction: column; }
     .items-center { align-items: center; }
@@ -67,13 +91,11 @@
     .max-w-7xl { max-width: 1280px; }
     .mx-auto { margin-left: auto; margin-right: auto; }
     .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
     .mb-4 { margin-bottom: 1rem; }
     .mt-4 { margin-top: 1rem; }
     .mt-8 { margin-top: 2rem; }
     .text-sm { font-size: 0.875rem; }
-    .text-xs { font-size: 0.75rem; letter-spacing: 0.05em; }
+    .text-xs { font-size: 0.75rem; letter-spacing: 0.08em; }
     .text-2xl { font-size: 1.5rem; }
     .text-3xl { font-size: 1.875rem; }
     .text-4xl { font-size: 2.25rem; }
@@ -85,373 +107,881 @@
     .overflow-hidden { overflow: hidden; }
     .rounded-2xl { border-radius: 1rem; }
     .rounded-3xl { border-radius: 1.5rem; }
-    .border { border: 1px solid #e5dbd3; }
-    .bg-card { background: white; }
-    .shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    .hover\:shadow-elegant:hover { box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15); }
-    .hover\:bg-surface:hover { background: #f5efe9; }
-    .hover\:text-primary:hover { color: #b45f3b; }
-    .hover\:bg-primary-glow:hover { background: #a04e2e; }
+    .border { border: 1px solid var(--border); }
+    .bg-card { background: var(--card); }
+
+    /* ----- buttons ----- */
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 0.85rem 2.5rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 16px rgba(138,59,44,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(138,59,44,0.35);
+    }
+    .btn-outline-light {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: white;
+      padding: 0.85rem 2.5rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+    .btn-outline-primary {
+      background: transparent;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      padding: 0.7rem 2rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-outline-primary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(138,59,44,0.2);
+    }
 
     /* ----- header ----- */
     .header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 50;
-      background: rgba(252,249,246,0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e5dbd3;
-      padding: 0.75rem 0;
+      z-index: 100;
+      background: rgba(252,248,244,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229,219,211,0.4);
+      padding: 0.6rem 0;
+      transition: all 0.3s ease;
     }
+    .header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo i { font-size: 1.75rem; color: var(--primary); }
+    .logo span { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+    .nav { display: flex; align-items: center; gap: 2.5rem; }
+    .nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.3s; position: relative; }
+    .nav a:hover { color: var(--primary); }
+    .nav a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--primary); transition: width 0.3s ease;
+    }
+    .nav a:hover::after { width: 100%; }
+    .nav .btn-primary { padding: 0.5rem 1.5rem; font-size: 0.85rem; }
+    .mobile-toggle { display: none; font-size: 1.5rem; color: var(--text); background: none; border: none; cursor: pointer; }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .mobile-toggle { display: block; }
+    }
+
     /* ----- hero ----- */
     .hero {
-      min-height: 92vh;
+      min-height: 100vh;
       background: linear-gradient(145deg, #1e1a16 0%, #2a221c 100%);
       color: white;
       display: flex;
       align-items: center;
       padding-top: 5rem;
       position: relative;
+      overflow: hidden;
     }
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 40%, #b45f3b33 0%, transparent 70%),
-                  radial-gradient(circle at 70% 60%, #b45f3b22 0%, transparent 60%);
-      opacity: 0.6;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(138,59,44,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(180,95,59,0.2) 0%, transparent 50%);
+      z-index: 0;
     }
-    .hero-content { position: relative; z-index: 2; }
-    .btn-primary {
-      background: #b45f3b;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 9999px;
-      font-weight: 500;
+    .hero .container { position: relative; z-index: 1; }
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      transition: 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary:hover { background: #9e4e2e; }
-    .btn-outline-light {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-      padding: 0.75rem 2rem;
+      gap: 0.6rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1.2rem;
       border-radius: 9999px;
-      font-weight: 500;
-      transition: 0.2s;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
     }
-    .btn-outline-light:hover { background: white; color: #1e1e1e; }
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1.05;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-stats div { text-align: center; }
+    .hero-stats .number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; }
+    .hero-stats .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-top: 0.25rem; }
+    @media (max-width: 768px) {
+      .hero-stats { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+    }
+
+    /* ----- badge bar ----- */
+    .badge-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .badge-bar .grid { gap: 0.5rem; }
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+    }
+    .badge-item:hover { background: white; box-shadow: var(--shadow-soft); }
+    .badge-item i { color: var(--primary); font-size: 1rem; width: 1.25rem; }
 
     /* ----- cards ----- */
     .variety-card {
-      background: white;
+      background: var(--card);
       border-radius: 1.5rem;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-      transition: 0.25s;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(229,219,211,0.3);
     }
-    .variety-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.12); }
-    .variety-card img { aspect-ratio: 4/5; object-fit: cover; width: 100%; }
+    .variety-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary-light);
+    }
+    .variety-card img { aspect-ratio: 4/5; object-fit: cover; width: 100%; transition: transform 0.6s ease; }
+    .variety-card:hover img { transform: scale(1.03); }
+    .variety-card .content { padding: 1.75rem; }
+    .variety-card h3 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .variety-card p { color: var(--text-muted); font-size: 0.95rem; }
+    .variety-card .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      font-weight: 500;
+      color: var(--primary);
+      transition: gap 0.3s ease;
+    }
+    .variety-card .link:hover { gap: 0.75rem; }
+
+    /* ----- product card ----- */
+    .product-card {
+      background: var(--card);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(229,219,211,0.2);
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-elegant);
+    }
     .product-card img { aspect-ratio: 1/1; object-fit: cover; width: 100%; }
+    .product-card .content { padding: 1.25rem 1.5rem 1.5rem; }
+    .product-card .category { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+    .product-card h3 { font-size: 1.3rem; margin: 0.25rem 0 0.5rem; }
+    .product-card .meta { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 0.75rem; }
+    .product-card .price { color: var(--primary); font-weight: 600; }
+
+    /* ----- section headers ----- */
+    .section-header { margin-bottom: 3.5rem; }
+    .section-header .sub { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--primary); font-weight: 600; }
+    .section-header h2 { font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.1; }
+    .section-header p { color: var(--text-muted); max-width: 560px; margin-top: 0.5rem; }
+
+    /* ----- why canon grid ----- */
+    .why-grid .item {
+      background: var(--background);
+      padding: 2rem;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid var(--border);
+    }
+    .why-grid .item:hover { background: var(--card); }
+    .why-grid .item i { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.75rem; }
+    .why-grid .item h3 { font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .why-grid .item p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* ----- process ----- */
+    .process-step {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .process-step:last-child { border-bottom: none; }
+    .process-step .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      width: 3.5rem;
+      flex-shrink: 0;
+    }
+    .process-step h3 { font-size: 1.4rem; }
+    .process-step p { color: rgba(255,255,255,0.6); }
+
+    /* ----- certifications ----- */
+    .cert-item {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    .cert-item:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-elegant);
+      transform: translateY(-4px);
+    }
+    .cert-item i { font-size: 2rem; color: var(--primary); flex-shrink: 0; margin-top: 0.2rem; }
+    .cert-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); font-weight: 600; }
+    .cert-item h4 { font-size: 1.2rem; }
+    .cert-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* ----- testimonials ----- */
+    .testimonial {
+      background: var(--card);
+      padding: 2rem 2.5rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(229,219,211,0.2);
+    }
+    .testimonial:hover { box-shadow: var(--shadow-elegant); }
+    .testimonial .stars { color: #d4a373; font-size: 1.1rem; letter-spacing: 0.15rem; margin-bottom: 0.75rem; }
+    .testimonial blockquote { font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; line-height: 1.5; }
+    .testimonial .author { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .testimonial .avatar {
+      width: 3.5rem; height: 3.5rem; border-radius: 50%;
+      background: var(--primary); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      font-weight: 600; flex-shrink: 0;
+    }
+    .testimonial .name { font-weight: 600; }
+    .testimonial .title { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* ----- faq ----- */
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .faq-item:hover { border-color: var(--primary-light); background: var(--surface); }
+    .faq-item .question { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; }
+    .faq-item i { color: var(--text-muted); transition: transform 0.3s ease; }
+
+    /* ----- cta ----- */
+    .cta-box {
+      background: linear-gradient(145deg, var(--primary), var(--primary-dark));
+      border-radius: 2rem;
+      padding: 4rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-elegant);
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 60%; height: 200%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-box .content { position: relative; z-index: 1; display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center; }
+    .cta-box h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    .cta-box p { opacity: 0.8; margin-top: 0.5rem; }
+    .cta-box .actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-end; }
+    .cta-box .btn-white { background: white; color: var(--primary); padding: 0.85rem 2.5rem; border-radius: 9999px; font-weight: 500; transition: all 0.3s ease; border: none; cursor: pointer; }
+    .cta-box .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .cta-box .btn-outline-white { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: white; padding: 0.85rem 2.5rem; border-radius: 9999px; font-weight: 500; transition: all 0.3s ease; cursor: pointer; }
+    .cta-box .btn-outline-white:hover { background: white; color: var(--primary); border-color: white; }
+    @media (max-width: 768px) {
+      .cta-box .content { grid-template-columns: 1fr; text-align: center; }
+      .cta-box .actions { justify-content: center; }
+      .cta-box { padding: 2.5rem; }
+    }
+
+    /* ----- contact ----- */
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+    }
+    .contact-info-item i {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .contact-info-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+    .contact-info-item .value { font-weight: 500; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.75rem;
+      background: white;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(138,59,44,0.08);
+    }
+
+    /* ----- footer ----- */
+    .footer {
+      background: var(--background);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .footer .grid { gap: 3rem; }
+    .footer .brand p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; max-width: 280px; }
+    .footer h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--text); margin-bottom: 1rem; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 0.5rem; }
+    .footer ul a { color: var(--text-muted); font-size: 0.9rem; transition: color 0.3s; }
+    .footer ul a:hover { color: var(--primary); }
+    .footer .newsletter-input { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+    .footer .newsletter-input input { flex: 1; padding: 0.6rem 1rem; border: 1.5px solid var(--border); border-radius: 9999px; font-size: 0.9rem; }
+    .footer .newsletter-input input:focus { outline: none; border-color: var(--primary); }
+    .footer .newsletter-input button { padding: 0.6rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 9999px; font-weight: 500; cursor: pointer; transition: background 0.3s; }
+    .footer .newsletter-input button:hover { background: var(--primary-dark); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    @media (max-width: 768px) {
+      .footer .grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; }
+    }
 
     /* ----- map ----- */
     .map-container iframe {
       width: 100%;
-      height: 300px;
+      height: 280px;
       border: 0;
       border-radius: 1rem;
+      box-shadow: var(--shadow-soft);
     }
 
-    /* ----- form ----- */
-    input, textarea {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      border: 1px solid #e0d6ce;
-      border-radius: 0.75rem;
-      background: white;
-      font-size: 0.95rem;
-    }
-    input:focus, textarea:focus { outline: 2px solid #b45f3b; outline-offset: 2px; }
-    label { font-weight: 500; font-size: 0.9rem; }
-
-    /* ----- responsive ----- */
+    /* ----- responsive grid fixes ----- */
     @media (max-width: 768px) {
       .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
-      .hero { min-height: 80vh; }
-      .text-4xl { font-size: 2rem; }
-      .md\:flex { display: none; }
-      .md\:block { display: none; }
-      .md\:grid-cols-2 { grid-template-columns: 1fr; }
-      .md\:grid-cols-4 { grid-template-columns: 1fr 1fr; }
+      .md\:grid-cols-2 { grid-template-columns: 1fr 1fr; }
+      .md\:grid-cols-3 { grid-template-columns: 1fr 1fr; }
+      .container { padding: 0 1.25rem; }
+      .section-padding { padding: 3rem 0; }
     }
     @media (min-width: 769px) {
-      .md\:flex { display: flex; }
-      .md\:block { display: block; }
       .md\:grid-cols-2 { grid-template-columns: repeat(2,1fr); }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3,1fr); }
       .md\:grid-cols-4 { grid-template-columns: repeat(4,1fr); }
-      .md\:text-6xl { font-size: 3.75rem; }
-      .md\:text-7xl { font-size: 4.5rem; }
     }
+    /* fix for why grid */
+    .why-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .why-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <div class="container flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2">
-      <i class="fas fa-leaf text-primary text-2xl"></i>
-      <span class="font-display text-2xl font-semibold">Canon Roses</span>
+  <div class="container">
+    <a href="#top" class="logo">
+      <i class="fas fa-seedling"></i>
+      <span>Canon Roses</span>
     </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+    <nav class="nav">
       <a href="#varieties">Varieties</a>
       <a href="#products">Products</a>
       <a href="#process">Process</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
+      <a href="#contact" class="btn-primary" style="padding:0.5rem 1.5rem;font-size:0.85rem;">Request a Quote</a>
     </nav>
-    <div class="hidden md:block">
-      <a href="#contact" class="btn-primary text-sm px-5 py-2">Request a Quote</a>
-    </div>
-    <button class="md:hidden text-2xl" aria-label="Menu">☰</button>
+    <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
-  <div class="container hero-content">
-    <div class="inline-flex items-center border border-white/20 bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs uppercase tracking-widest text-white/90 mb-6">
-      <i class="fas fa-seedling mr-2"></i> Grown in Kenya · Loved Worldwide
+  <div class="container">
+    <div class="hero-badge">
+      <i class="fas fa-globe-africa"></i> Grown in Kenya · Loved Worldwide
     </div>
-    <h1 class="font-display text-5xl md:text-7xl font-medium leading-[1.05] max-w-4xl">Premium Kenyan Roses, <span class="italic text-[#d9a07a]">Grown for the World</span></h1>
-    <p class="text-lg md:text-xl text-white/80 max-w-2xl mt-4">Cultivating and exporting world-class fresh-cut roses to wholesalers, distributors and floral businesses across the globe.</p>
-    <div class="flex flex-wrap gap-3 mt-6">
-      <a href="#varieties" class="btn-primary">Browse Rose Varieties <i class="fas fa-arrow-right ml-2"></i></a>
+    <h1>Premium Kenyan Roses, <em>Grown for the World</em></h1>
+    <p>Cultivating and exporting world-class fresh-cut roses to wholesalers, distributors and floral businesses across the globe.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+      <a href="#varieties" class="btn-primary">Browse Rose Varieties <i class="fas fa-arrow-right"></i></a>
       <a href="#contact" class="btn-outline-light">Request a Quote</a>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 border-t border-white/20 pt-8 text-white/90">
-      <div><div class="font-display text-3xl font-semibold">50+</div><div class="text-xs uppercase tracking-widest text-white/60">Rose Varieties</div></div>
-      <div><div class="font-display text-3xl font-semibold">10+</div><div class="text-xs uppercase tracking-widest text-white/60">Export Countries</div></div>
-      <div><div class="font-display text-3xl font-semibold">15 yr</div><div class="text-xs uppercase tracking-widest text-white/60">Cultivation Heritage</div></div>
-      <div><div class="font-display text-3xl font-semibold">2–4°C</div><div class="text-xs uppercase tracking-widest text-white/60">Cold Chain Managed</div></div>
+    <div class="hero-stats">
+      <div><div class="number">50+</div><div class="label">Rose Varieties</div></div>
+      <div><div class="number">10+</div><div class="label">Export Countries</div></div>
+      <div><div class="number">15 yr</div><div class="label">Cultivation Heritage</div></div>
+      <div><div class="number">2–4°C</div><div class="label">Cold Chain Managed</div></div>
     </div>
   </div>
 </section>
 
 <!-- ===== BADGE BAR ===== -->
-<section class="bg-surface border-b border-muted">
-  <div class="container py-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-medium">
-    <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-primary"></i> Export-Certified</div>
-    <div class="flex items-center gap-2"><i class="fas fa-snowflake text-primary"></i> Cold Chain Managed</div>
-    <div class="flex items-center gap-2"><i class="fas fa-globe-africa text-primary"></i> International Shipping</div>
-    <div class="flex items-center gap-2"><i class="fas fa-leaf text-primary"></i> Sustainable Farming</div>
+<section class="badge-bar">
+  <div class="container">
+    <div class="grid grid-cols-2 md:grid-cols-4" style="gap:0.75rem;">
+      <div class="badge-item"><i class="fas fa-shield-alt"></i> Export-Certified</div>
+      <div class="badge-item"><i class="fas fa-snowflake"></i> Cold Chain Managed</div>
+      <div class="badge-item"><i class="fas fa-ship"></i> International Shipping</div>
+      <div class="badge-item"><i class="fas fa-leaf"></i> Sustainable Farming</div>
+    </div>
   </div>
 </section>
 
 <!-- ===== VARIETIES ===== -->
-<section id="varieties" class="container py-24">
-  <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-14">
-    <div><div class="text-xs uppercase tracking-widest text-primary font-semibold mb-1">Our Roses</div><h2 class="font-display text-4xl md:text-6xl leading-tight">Fifty varieties, one uncompromising standard.</h2></div>
-    <p class="max-w-md text-muted">From the timeless deep red to seasonal novelty blooms, every Canon variety is bred, grown and graded for export excellence.</p>
-  </div>
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-    <div class="variety-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23a33f2a'/%3E%3C/svg%3E" alt="Classic Red"><div class="p-5"><h3 class="font-display text-2xl">Classic Red</h3><p class="text-sm text-muted mt-1">Timeless deep red blooms — our signature export variety.</p><a href="#contact" class="text-primary font-medium inline-flex items-center gap-1 mt-3 hover:gap-2 transition">Request Quote <i class="fas fa-arrow-right text-sm"></i></a></div></div>
-    <div class="variety-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23f0c27b'/%3E%3C/svg%3E" alt="Premium Garden"><div class="p-5"><h3 class="font-display text-2xl">Premium Garden</h3><p class="text-sm text-muted mt-1">Layered garden roses in warm ivory and sun-yellow tones.</p><a href="#contact" class="text-primary font-medium inline-flex items-center gap-1 mt-3 hover:gap-2 transition">Request Quote <i class="fas fa-arrow-right text-sm"></i></a></div></div>
-    <div class="variety-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23f7d4d4'/%3E%3C/svg%3E" alt="Spray Roses"><div class="p-5"><h3 class="font-display text-2xl">Spray Roses</h3><p class="text-sm text-muted mt-1">Multi-headed cream and white sprays for lush arrangements.</p><a href="#contact" class="text-primary font-medium inline-flex items-center gap-1 mt-3 hover:gap-2 transition">Request Quote <i class="fas fa-arrow-right text-sm"></i></a></div></div>
-    <div class="variety-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23d97a7a'/%3E%3C/svg%3E" alt="Bicolor"><div class="p-5"><h3 class="font-display text-2xl">Bicolor & Novelty</h3><p class="text-sm text-muted mt-1">Striking two-tone blooms for statement floral design.</p><a href="#contact" class="text-primary font-medium inline-flex items-center gap-1 mt-3 hover:gap-2 transition">Request Quote <i class="fas fa-arrow-right text-sm"></i></a></div></div>
-    <div class="variety-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23f0b8c0'/%3E%3C/svg%3E" alt="Pastel"><div class="p-5"><h3 class="font-display text-2xl">Pastel & Blush</h3><p class="text-sm text-muted mt-1">Soft blush and powder pinks — a wedding-market favourite.</p><a href="#contact" class="text-primary font-medium inline-flex items-center gap-1 mt-3 hover:gap-2 transition">Request Quote <i class="fas fa-arrow-right text-sm"></i></a></div></div>
-    <div class="variety-card"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%23e68f6b'/%3E%3C/svg%3E" alt="Coral"><div class="p-5"><h3 class="font-display text-2xl">Coral Selection</h3><p class="text-sm text-muted mt-1">Vivid coral and peach garden roses for premium boutiques.</p><a href="#contact" class="text-primary font-medium inline-flex items-center gap-1 mt-3 hover:gap-2 transition">Request Quote <i class="fas fa-arrow-right text-sm"></i></a></div></div>
+<section id="varieties" class="section-padding" style="background:var(--background);">
+  <div class="container">
+    <div class="section-header flex flex-col md:flex-row justify-between items-start md:items-end">
+      <div>
+        <div class="sub">Our Roses</div>
+        <h2>Fifty varieties, one uncompromising standard.</h2>
+      </div>
+      <p style="max-width:420px;">From the timeless deep red to seasonal novelty blooms, every Canon variety is bred, grown and graded for export excellence.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3" style="gap:2rem;">
+      <div class="variety-card">
+        <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=600&h=750&fit=crop&crop=center" alt="Classic Red Rose" loading="lazy" />
+        <div class="content">
+          <h3>Classic Red</h3>
+          <p>Timeless deep red blooms — our signature export variety.</p>
+          <a href="#contact" class="link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="variety-card">
+        <img src="https://images.unsplash.com/photo-1518047601546-796f5f23697e?w=600&h=750&fit=crop&crop=center" alt="Premium Garden Rose" loading="lazy" />
+        <div class="content">
+          <h3>Premium Garden</h3>
+          <p>Layered garden roses in warm ivory and sun-yellow tones.</p>
+          <a href="#contact" class="link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="variety-card">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=750&fit=crop&crop=center" alt="Spray Roses" loading="lazy" />
+        <div class="content">
+          <h3>Spray Roses</h3>
+          <p>Multi-headed cream and white sprays for lush arrangements.</p>
+          <a href="#contact" class="link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="variety-card">
+        <img src="https://images.unsplash.com/photo-1518744362183-dbe3831f616e?w=600&h=750&fit=crop&crop=center" alt="Bicolor Rose" loading="lazy" />
+        <div class="content">
+          <h3>Bicolor &amp; Novelty</h3>
+          <p>Striking two-tone blooms for statement floral design.</p>
+          <a href="#contact" class="link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="variety-card">
+        <img src="https://images.unsplash.com/photo-1493236276364-4b5cf0e6b0b0?w=600&h=750&fit=crop&crop=center" alt="Pastel Rose" loading="lazy" />
+        <div class="content">
+          <h3>Pastel &amp; Blush</h3>
+          <p>Soft blush and powder pinks — a wedding-market favourite.</p>
+          <a href="#contact" class="link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="variety-card">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&h=750&fit=crop&crop=center" alt="Coral Rose" loading="lazy" />
+        <div class="content">
+          <h3>Coral Selection</h3>
+          <p>Vivid coral and peach garden roses for premium boutiques.</p>
+          <a href="#contact" class="link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ===== PRODUCTS ===== -->
-<section id="products" class="bg-surface py-24">
+<section id="products" class="section-padding" style="background:var(--surface);">
   <div class="container">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-      <div><div class="text-xs uppercase tracking-widest text-primary font-semibold">Featured Products</div><h2 class="font-display text-4xl md:text-5xl leading-tight">This week's export catalogue</h2></div>
-      <div class="flex flex-wrap gap-2 text-sm text-muted"><span class="px-3 py-1 bg-white rounded-full border">All Varieties</span><span class="px-3 py-1 bg-white rounded-full border">Red</span><span class="px-3 py-1 bg-white rounded-full border">Pastel</span><span class="px-3 py-1 bg-white rounded-full border">Garden</span><span class="px-3 py-1 bg-white rounded-full border">Spray</span></div>
+    <div class="section-header flex flex-col md:flex-row justify-between items-start md:items-end">
+      <div>
+        <div class="sub">Featured Products</div>
+        <h2>This week's export catalogue</h2>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <span class="badge-item" style="background:white;border:1px solid var(--border);padding:0.3rem 1rem;font-size:0.75rem;">All Varieties</span>
+        <span class="badge-item" style="background:white;border:1px solid var(--border);padding:0.3rem 1rem;font-size:0.75rem;">Red</span>
+        <span class="badge-item" style="background:white;border:1px solid var(--border);padding:0.3rem 1rem;font-size:0.75rem;">Pastel</span>
+        <span class="badge-item" style="background:white;border:1px solid var(--border);padding:0.3rem 1rem;font-size:0.75rem;">Garden</span>
+        <span class="badge-item" style="background:white;border:1px solid var(--border);padding:0.3rem 1rem;font-size:0.75rem;">Spray</span>
+      </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl shadow-soft overflow-hidden"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23b43a2a'/%3E%3C/svg%3E" alt="Explorer Red"><div class="p-4"><div class="text-xs uppercase text-muted">Classic Red</div><h3 class="font-display text-xl">Explorer Red</h3><div class="flex justify-between text-sm mt-2"><span>$0.42 / stem</span><span>70 cm</span></div></div></div>
-      <div class="bg-white rounded-2xl shadow-soft overflow-hidden"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f5e1d9'/%3E%3C/svg%3E" alt="Playa Blanca"><div class="p-4"><div class="text-xs uppercase text-muted">Spray White</div><h3 class="font-display text-xl">Playa Blanca</h3><div class="flex justify-between text-sm mt-2"><span>Price on Request</span><span>50 cm</span></div></div></div>
-      <div class="bg-white rounded-2xl shadow-soft overflow-hidden"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f2b8c0'/%3E%3C/svg%3E" alt="Rosita Vendela"><div class="p-4"><div class="text-xs uppercase text-muted">Blush Pink</div><h3 class="font-display text-xl">Rosita Vendela</h3><div class="flex justify-between text-sm mt-2"><span>$0.38 / stem</span><span>60 cm</span></div></div></div>
-      <div class="bg-white rounded-2xl shadow-soft overflow-hidden"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23cc7a5a'/%3E%3C/svg%3E" alt="Cherry Brandy"><div class="p-4"><div class="text-xs uppercase text-muted">Bicolor</div><h3 class="font-display text-xl">Cherry Brandy</h3><div class="flex justify-between text-sm mt-2"><span>$0.55 / stem</span><span>60 cm</span></div></div></div>
-      <div class="bg-white rounded-2xl shadow-soft overflow-hidden"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f2d97a'/%3E%3C/svg%3E" alt="Golden Mustard"><div class="p-4"><div class="text-xs uppercase text-muted">Yellow Garden</div><h3 class="font-display text-xl">Golden Mustard</h3><div class="flex justify-between text-sm mt-2"><span>$0.44 / stem</span><span>70 cm</span></div></div></div>
-      <div class="bg-white rounded-2xl shadow-soft overflow-hidden"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e8915a'/%3E%3C/svg%3E" alt="Coral Reef"><div class="p-4"><div class="text-xs uppercase text-muted">Coral</div><h3 class="font-display text-xl">Coral Reef</h3><div class="flex justify-between text-sm mt-2"><span>Price on Request</span><span>65 cm</span></div></div></div>
+    <div class="grid grid-cols-2 md:grid-cols-3" style="gap:1.5rem;">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=400&h=400&fit=crop&crop=center" alt="Explorer Red" loading="lazy" />
+        <div class="content">
+          <div class="category">Classic Red</div>
+          <h3>Explorer Red</h3>
+          <div class="meta"><span>70 cm</span><span class="price">$0.42 / stem</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=400&fit=crop&crop=center" alt="Playa Blanca" loading="lazy" />
+        <div class="content">
+          <div class="category">Spray White</div>
+          <h3>Playa Blanca</h3>
+          <div class="meta"><span>50 cm</span><span class="price">Price on Request</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1493236276364-4b5cf0e6b0b0?w=400&h=400&fit=crop&crop=center" alt="Rosita Vendela" loading="lazy" />
+        <div class="content">
+          <div class="category">Blush Pink</div>
+          <h3>Rosita Vendela</h3>
+          <div class="meta"><span>60 cm</span><span class="price">$0.38 / stem</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1518744362183-dbe3831f616e?w=400&h=400&fit=crop&crop=center" alt="Cherry Brandy" loading="lazy" />
+        <div class="content">
+          <div class="category">Bicolor</div>
+          <h3>Cherry Brandy</h3>
+          <div class="meta"><span>60 cm</span><span class="price">$0.55 / stem</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1518047601546-796f5f23697e?w=400&h=400&fit=crop&crop=center" alt="Golden Mustard" loading="lazy" />
+        <div class="content">
+          <div class="category">Yellow Garden</div>
+          <h3>Golden Mustard</h3>
+          <div class="meta"><span>70 cm</span><span class="price">$0.44 / stem</span></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400&h=400&fit=crop&crop=center" alt="Coral Reef" loading="lazy" />
+        <div class="content">
+          <div class="category">Coral</div>
+          <h3>Coral Reef</h3>
+          <div class="meta"><span>65 cm</span><span class="price">Price on Request</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== WHY CANON ===== -->
-<section class="container py-24">
-  <div class="max-w-3xl mb-14"><div class="text-xs uppercase tracking-widest text-primary font-semibold">Why Canon Roses</div><h2 class="font-display text-4xl md:text-6xl leading-tight">A grower partner built for global buyers.</h2></div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-muted rounded-3xl overflow-hidden">
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-shield-alt text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Export-Grade Quality</h3><p class="text-sm text-muted mt-1">Every stem inspected against global bloom, length and vase-life standards.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-calendar-alt text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Consistent Year-Round Supply</h3><p class="text-sm text-muted mt-1">Kenya's equatorial climate delivers reliable volume, 52 weeks a year.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-snowflake text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Cold Chain Managed</h3><p class="text-sm text-muted mt-1">Unbroken 2–4 °C handling from field to airport to your distribution hub.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-globe text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Competitive Global Pricing</h3><p class="text-sm text-muted mt-1">Direct-from-grower pricing with transparent FOB and CIF quotations.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-leaf text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Sustainable Farming</h3><p class="text-sm text-muted mt-1">MPS-A, Fairtrade and Kenya Flower Council aligned practices.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-truck text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Reliable Logistics</h3><p class="text-sm text-muted mt-1">Weekly airfreight to Amsterdam, Dubai, London, Moscow, Tokyo and beyond.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-box text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Custom Packaging</h3><p class="text-sm text-muted mt-1">Private-label sleeves, branded boxes and mixed-bunch export cartons.</p></div>
-    <div class="bg-background p-6 hover:bg-surface transition"><i class="fas fa-headset text-primary text-2xl mb-3"></i><h3 class="font-display text-xl">Dedicated Export Team</h3><p class="text-sm text-muted mt-1">One account manager from first quote through final delivery.</p></div>
+<section class="section-padding" style="background:var(--background);">
+  <div class="container">
+    <div class="section-header" style="max-width:700px;">
+      <div class="sub">Why Canon Roses</div>
+      <h2>A grower partner built for global buyers.</h2>
+    </div>
+    <div class="why-grid" style="border:1px solid var(--border);border-radius:1.5rem;overflow:hidden;">
+      <div class="item"><i class="fas fa-shield-alt"></i><h3>Export-Grade Quality</h3><p>Every stem inspected against global bloom, length and vase-life standards.</p></div>
+      <div class="item"><i class="fas fa-calendar-alt"></i><h3>Consistent Year-Round Supply</h3><p>Kenya's equatorial climate delivers reliable volume, 52 weeks a year.</p></div>
+      <div class="item"><i class="fas fa-snowflake"></i><h3>Cold Chain Managed</h3><p>Unbroken 2–4 °C handling from field to airport to your distribution hub.</p></div>
+      <div class="item"><i class="fas fa-globe"></i><h3>Competitive Global Pricing</h3><p>Direct-from-grower pricing with transparent FOB and CIF quotations.</p></div>
+      <div class="item"><i class="fas fa-leaf"></i><h3>Sustainable Farming</h3><p>MPS-A, Fairtrade and Kenya Flower Council aligned practices.</p></div>
+      <div class="item"><i class="fas fa-truck"></i><h3>Reliable Logistics</h3><p>Weekly airfreight to Amsterdam, Dubai, London, Moscow, Tokyo and beyond.</p></div>
+      <div class="item"><i class="fas fa-box"></i><h3>Custom Packaging</h3><p>Private-label sleeves, branded boxes and mixed-bunch export cartons.</p></div>
+      <div class="item"><i class="fas fa-headset"></i><h3>Dedicated Export Team</h3><p>One account manager from first quote through final delivery.</p></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== PROCESS ===== -->
-<section id="process" class="bg-foreground text-white py-24">
-  <div class="container grid md:grid-cols-[1fr_1.2fr] gap-12">
-    <div><div class="text-xs uppercase tracking-widest text-[#d9a07a]">Cultivation & Quality</div><h2 class="font-display text-4xl md:text-5xl leading-tight mt-2">From equatorial highlands to your cold room.</h2><p class="text-white/70 text-lg mt-4">Every stem passes through five carefully controlled stages before it reaches an international buyer.</p></div>
-    <ol class="space-y-1">
-      <li class="border-b border-white/10 py-5 flex gap-6"><span class="font-display text-3xl text-[#d9a07a]">01</span><div><h3 class="font-display text-2xl">Cultivation</h3><p class="text-white/70">Grown under controlled greenhouse conditions at 1,900 m altitude.</p></div></li>
-      <li class="border-b border-white/10 py-5 flex gap-6"><span class="font-display text-3xl text-[#d9a07a]">02</span><div><h3 class="font-display text-2xl">Harvesting</h3><p class="text-white/70">Hand-picked at peak freshness in the cool morning hours.</p></div></li>
-      <li class="border-b border-white/10 py-5 flex gap-6"><span class="font-display text-3xl text-[#d9a07a]">03</span><div><h3 class="font-display text-2xl">Grading & QC</h3><p class="text-white/70">Sorted by stem length, bloom size, straightness and foliage quality.</p></div></li>
-      <li class="border-b border-white/10 py-5 flex gap-6"><span class="font-display text-3xl text-[#d9a07a]">04</span><div><h3 class="font-display text-2xl">Packing</h3><p class="text-white/70">Bunched, sleeved and boxed in temperature-controlled packhouses.</p></div></li>
-      <li class="border-b border-white/10 py-5 flex gap-6"><span class="font-display text-3xl text-[#d9a07a]">05</span><div><h3 class="font-display text-2xl">Export & Logistics</h3><p class="text-white/70">Airfreighted via cold chain to international distribution hubs.</p></div></li>
-    </ol>
+<section id="process" class="section-padding" style="background:var(--primary-dark);color:white;">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:1fr 1.2fr;gap:4rem;">
+      <div>
+        <div class="sub" style="color:var(--accent);">Cultivation &amp; Quality</div>
+        <h2 style="font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.1;">From equatorial highlands to your cold room.</h2>
+        <p style="opacity:0.7;font-size:1.1rem;margin-top:1rem;">Every stem passes through five carefully controlled stages before it reaches an international buyer.</p>
+      </div>
+      <div>
+        <div class="process-step"><span class="num">01</span><div><h3>Cultivation</h3><p>Grown under controlled greenhouse conditions at 1,900 m altitude.</p></div></div>
+        <div class="process-step"><span class="num">02</span><div><h3>Harvesting</h3><p>Hand-picked at peak freshness in the cool morning hours.</p></div></div>
+        <div class="process-step"><span class="num">03</span><div><h3>Grading &amp; QC</h3><p>Sorted by stem length, bloom size, straightness and foliage quality.</p></div></div>
+        <div class="process-step"><span class="num">04</span><div><h3>Packing</h3><p>Bunched, sleeved and boxed in temperature-controlled packhouses.</p></div></div>
+        <div class="process-step"><span class="num">05</span><div><h3>Export &amp; Logistics</h3><p>Airfreighted via cold chain to international distribution hubs.</p></div></div>
+      </div>
+    </div>
   </div>
+  @media (max-width:768px) {
+    #process .grid { grid-template-columns:1fr; gap:2rem; }
+  }
 </section>
 
 <!-- ===== SECTORS ===== -->
-<section class="container py-24">
-  <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-    <div><div class="text-xs uppercase tracking-widest text-primary">Industries & Buyers</div><h2 class="font-display text-4xl md:text-5xl leading-tight">Trusted by floral businesses worldwide.</h2></div>
-    <p class="max-w-md text-muted">We supply the full spectrum of professional flower buyers, from Rotterdam auction floors to Middle-Eastern retail chains.</p>
-  </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">International Wholesalers</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Floral Distributors</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Retail Flower Chains</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Supermarket Floral Buyers</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Event & Wedding Planners</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Corporate Gifting Companies</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Import / Export Agents</span></div>
-    <div class="flex items-center gap-3 bg-card border rounded-2xl p-4 hover:border-primary/40 transition"><i class="fas fa-check-circle text-secondary"></i><span class="text-sm font-medium">Boutique Florists</span></div>
+<section class="section-padding" style="background:var(--background);">
+  <div class="container">
+    <div class="section-header flex flex-col md:flex-row justify-between items-start md:items-end">
+      <div>
+        <div class="sub">Industries &amp; Buyers</div>
+        <h2>Trusted by floral businesses worldwide.</h2>
+      </div>
+      <p style="max-width:420px;">We supply the full spectrum of professional flower buyers, from Rotterdam auction floors to Middle-Eastern retail chains.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4" style="gap:0.75rem;">
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> International Wholesalers</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Floral Distributors</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Retail Flower Chains</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Supermarket Floral Buyers</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Event &amp; Wedding Planners</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Corporate Gifting Companies</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Import / Export Agents</div>
+      <div class="badge-item" style="background:white;border:1px solid var(--border);"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Boutique Florists</div>
+    </div>
   </div>
 </section>
 
 <!-- ===== CERTIFICATIONS ===== -->
-<section id="certifications" class="bg-surface py-24">
-  <div class="container text-center max-w-2xl mx-auto">
-    <div class="text-xs uppercase tracking-widest text-primary">Compliance & Certifications</div>
-    <h2 class="font-display text-4xl md:text-5xl leading-tight mt-2">Audited, certified, export-ready.</h2>
-    <p class="text-muted mt-4">We hold the certifications international buyers require — with full phytosanitary paperwork included on every shipment.</p>
-  </div>
-  <div class="container grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-    <div class="bg-background rounded-2xl p-5 shadow-soft flex items-start gap-4"><i class="fas fa-award text-primary text-2xl"></i><div><div class="text-xs uppercase text-primary font-bold">MPS-A</div><h4 class="font-display text-xl">MPS Certification</h4><p class="text-sm text-muted">Milieu Programma Sierteelt — top environmental grade.</p></div></div>
-    <div class="bg-background rounded-2xl p-5 shadow-soft flex items-start gap-4"><i class="fas fa-award text-primary text-2xl"></i><div><div class="text-xs uppercase text-primary font-bold">FT</div><h4 class="font-display text-xl">Fairtrade Certified</h4><p class="text-sm text-muted">Fair wages and community investment on every stem.</p></div></div>
-    <div class="bg-background rounded-2xl p-5 shadow-soft flex items-start gap-4"><i class="fas fa-award text-primary text-2xl"></i><div><div class="text-xs uppercase text-primary font-bold">G.A.P</div><h4 class="font-display text-xl">GlobalG.A.P.</h4><p class="text-sm text-muted">Good Agricultural Practice for horticulture.</p></div></div>
-    <div class="bg-background rounded-2xl p-5 shadow-soft flex items-start gap-4"><i class="fas fa-award text-primary text-2xl"></i><div><div class="text-xs uppercase text-primary font-bold">KFC</div><h4 class="font-display text-xl">Kenya Flower Council</h4><p class="text-sm text-muted">Silver-tier compliance with the KFC Code of Practice.</p></div></div>
-    <div class="bg-background rounded-2xl p-5 shadow-soft flex items-start gap-4"><i class="fas fa-award text-primary text-2xl"></i><div><div class="text-xs uppercase text-primary font-bold">PHY</div><h4 class="font-display text-xl">Phytosanitary</h4><p class="text-sm text-muted">Certified export documentation for every shipment.</p></div></div>
-    <div class="bg-background rounded-2xl p-5 shadow-soft flex items-start gap-4"><i class="fas fa-award text-primary text-2xl"></i><div><div class="text-xs uppercase text-primary font-bold">ISO</div><h4 class="font-display text-xl">ISO 9001</h4><p class="text-sm text-muted">Quality management across cultivation and packing.</p></div></div>
+<section id="certifications" class="section-padding" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header text-center" style="max-width:640px;margin-left:auto;margin-right:auto;">
+      <div class="sub">Compliance &amp; Certifications</div>
+      <h2>Audited, certified, export-ready.</h2>
+      <p>We hold the certifications international buyers require — with full phytosanitary paperwork included on every shipment.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3" style="gap:1.25rem;">
+      <div class="cert-item"><i class="fas fa-award"></i><div><div class="label">MPS-A</div><h4>MPS Certification</h4><p>Milieu Programma Sierteelt — top environmental grade.</p></div></div>
+      <div class="cert-item"><i class="fas fa-award"></i><div><div class="label">FT</div><h4>Fairtrade Certified</h4><p>Fair wages and community investment on every stem.</p></div></div>
+      <div class="cert-item"><i class="fas fa-award"></i><div><div class="label">G.A.P</div><h4>GlobalG.A.P.</h4><p>Good Agricultural Practice for horticulture.</p></div></div>
+      <div class="cert-item"><i class="fas fa-award"></i><div><div class="label">KFC</div><h4>Kenya Flower Council</h4><p>Silver-tier compliance with the KFC Code of Practice.</p></div></div>
+      <div class="cert-item"><i class="fas fa-award"></i><div><div class="label">PHY</div><h4>Phytosanitary</h4><p>Certified export documentation for every shipment.</p></div></div>
+      <div class="cert-item"><i class="fas fa-award"></i><div><div class="label">ISO</div><h4>ISO 9001</h4><p>Quality management across cultivation and packing.</p></div></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== ORDER STEPS ===== -->
-<section class="container py-24">
-  <div class="max-w-2xl mb-12"><div class="text-xs uppercase tracking-widest text-primary">How Ordering Works</div><h2 class="font-display text-4xl md:text-5xl leading-tight">Simple, transparent, six steps to delivery.</h2></div>
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-    <div class="bg-card border rounded-2xl p-6"><span class="font-display text-4xl text-primary/30">01</span><p class="font-medium mt-2">Browse rose varieties</p></div>
-    <div class="bg-card border rounded-2xl p-6"><span class="font-display text-4xl text-primary/30">02</span><p class="font-medium mt-2">Review specifications & certifications</p></div>
-    <div class="bg-card border rounded-2xl p-6"><span class="font-display text-4xl text-primary/30">03</span><p class="font-medium mt-2">Submit inquiry or quote request</p></div>
-    <div class="bg-card border rounded-2xl p-6"><span class="font-display text-4xl text-primary/30">04</span><p class="font-medium mt-2">Confirm order & packaging details</p></div>
-    <div class="bg-card border rounded-2xl p-6"><span class="font-display text-4xl text-primary/30">05</span><p class="font-medium mt-2">Secure payment & export documentation</p></div>
-    <div class="bg-card border rounded-2xl p-6"><span class="font-display text-4xl text-primary/30">06</span><p class="font-medium mt-2">Cold-chain shipping & delivery</p></div>
+<section class="section-padding" style="background:var(--background);">
+  <div class="container">
+    <div class="section-header" style="max-width:600px;">
+      <div class="sub">How Ordering Works</div>
+      <h2>Simple, transparent, six steps to delivery.</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3" style="gap:1.5rem;">
+      <div class="bg-card border rounded-2xl p-6 shadow-soft"><span style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--primary);opacity:0.5;">01</span><p style="font-weight:500;font-size:1.1rem;margin-top:0.3rem;">Browse rose varieties</p></div>
+      <div class="bg-card border rounded-2xl p-6 shadow-soft"><span style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--primary);opacity:0.5;">02</span><p style="font-weight:500;font-size:1.1rem;margin-top:0.3rem;">Review specifications &amp; certifications</p></div>
+      <div class="bg-card border rounded-2xl p-6 shadow-soft"><span style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--primary);opacity:0.5;">03</span><p style="font-weight:500;font-size:1.1rem;margin-top:0.3rem;">Submit inquiry or quote request</p></div>
+      <div class="bg-card border rounded-2xl p-6 shadow-soft"><span style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--primary);opacity:0.5;">04</span><p style="font-weight:500;font-size:1.1rem;margin-top:0.3rem;">Confirm order &amp; packaging details</p></div>
+      <div class="bg-card border rounded-2xl p-6 shadow-soft"><span style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--primary);opacity:0.5;">05</span><p style="font-weight:500;font-size:1.1rem;margin-top:0.3rem;">Secure payment &amp; export documentation</p></div>
+      <div class="bg-card border rounded-2xl p-6 shadow-soft"><span style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--primary);opacity:0.5;">06</span><p style="font-weight:500;font-size:1.1rem;margin-top:0.3rem;">Cold-chain shipping &amp; delivery</p></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-<section class="bg-surface py-24">
+<section class="section-padding" style="background:var(--surface);">
   <div class="container">
-    <div class="max-w-2xl mb-12"><div class="text-xs uppercase tracking-widest text-primary">Voices from our buyers</div><h2 class="font-display text-4xl md:text-5xl leading-tight">Trusted across four continents.</h2></div>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-background rounded-3xl p-8 shadow-soft"><div class="flex text-warning text-yellow-500 text-sm">★★★★★</div><blockquote class="font-display text-xl mt-4">"Canon Roses has become one of our most reliable Kenyan partners. Vase life is consistently 12+ days and their logistics team never misses a Wednesday shipment."</blockquote><div class="flex items-center gap-4 mt-6 border-t pt-5"><div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-display text-xl">M</div><div><div class="font-semibold">Marije van der Berg</div><div class="text-sm text-muted">Buyer, Aalsmeer Flower Group · Netherlands</div></div></div></div>
-      <div class="bg-background rounded-3xl p-8 shadow-soft"><div class="flex text-warning text-yellow-500 text-sm">★★★★★</div><blockquote class="font-display text-xl mt-4">"The bloom quality on their Explorer Red is exceptional. We've moved 40% of our red rose volume to Canon in the last two seasons."</blockquote><div class="flex items-center gap-4 mt-6 border-t pt-5"><div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-display text-xl">A</div><div><div class="font-semibold">Ahmed Al-Rashid</div><div class="text-sm text-muted">Head of Sourcing, Bloom Emirates · UAE</div></div></div></div>
-      <div class="bg-background rounded-3xl p-8 shadow-soft"><div class="flex text-warning text-yellow-500 text-sm">★★★★★</div><blockquote class="font-display text-xl mt-4">"Their garden and coral varieties are wedding-season gold. Custom branded sleeves arrive picture-perfect every time."</blockquote><div class="flex items-center gap-4 mt-6 border-t pt-5"><div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-display text-xl">S</div><div><div class="font-semibold">Sophie Laurent</div><div class="text-sm text-muted">Creative Director, Maison Fleur · France</div></div></div></div>
-      <div class="bg-background rounded-3xl p-8 shadow-soft"><div class="flex text-warning text-yellow-500 text-sm">★★★★★</div><blockquote class="font-display text-xl mt-4">"A rare grower that combines certification, transparency and consistency. Our supermarket buyers trust the Canon label."</blockquote><div class="flex items-center gap-4 mt-6 border-t pt-5"><div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-display text-xl">J</div><div><div class="font-semibold">James Whitmore</div><div class="text-sm text-muted">Category Manager, Fresh Flowers Co. · UK</div></div></div></div>
+    <div class="section-header" style="max-width:600px;">
+      <div class="sub">Voices from our buyers</div>
+      <h2>Trusted across four continents.</h2>
+    </div>
+    <div class="grid md:grid-cols-2" style="gap:2rem;">
+      <div class="testimonial"><div class="stars">★★★★★</div><blockquote>"Canon Roses has become one of our most reliable Kenyan partners. Vase life is consistently 12+ days and their logistics team never misses a Wednesday shipment."</blockquote><div class="author"><div class="avatar">M</div><div><div class="name">Marije van der Berg</div><div class="title">Buyer, Aalsmeer Flower Group · Netherlands</div></div></div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><blockquote>"The bloom quality on their Explorer Red is exceptional. We've moved 40% of our red rose volume to Canon in the last two seasons."</blockquote><div class="author"><div class="avatar">A</div><div><div class="name">Ahmed Al-Rashid</div><div class="title">Head of Sourcing, Bloom Emirates · UAE</div></div></div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><blockquote>"Their garden and coral varieties are wedding-season gold. Custom branded sleeves arrive picture-perfect every time."</blockquote><div class="author"><div class="avatar">S</div><div><div class="name">Sophie Laurent</div><div class="title">Creative Director, Maison Fleur · France</div></div></div></div>
+      <div class="testimonial"><div class="stars">★★★★★</div><blockquote>"A rare grower that combines certification, transparency and consistency. Our supermarket buyers trust the Canon label."</blockquote><div class="author"><div class="avatar">J</div><div><div class="name">James Whitmore</div><div class="title">Category Manager, Fresh Flowers Co. · UK</div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
-<section id="faq" class="container py-24 max-w-4xl">
-  <div class="text-center mb-12"><div class="text-xs uppercase tracking-widest text-primary">Frequently Asked</div><h2 class="font-display text-4xl md:text-5xl">Questions from international buyers</h2></div>
-  <div class="space-y-3">
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">What countries do you export to?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">What is your minimum order quantity?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">How do you ensure freshness during shipping?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">Are your roses certified for international export?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">Can I request custom packaging or branding?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">What is your lead time for bulk orders?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">Do you offer seasonal or limited-edition varieties?</span><i class="fas fa-chevron-down text-muted"></i></div>
-    <div class="bg-card border rounded-2xl px-6 py-4 flex justify-between items-center"><span class="font-display text-lg">What payment and shipping terms do you offer?</span><i class="fas fa-chevron-down text-muted"></i></div>
+<section id="faq" class="section-padding" style="background:var(--background);">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header text-center">
+      <div class="sub">Frequently Asked</div>
+      <h2>Questions from international buyers</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+      <div class="faq-item"><span class="question">What countries do you export to?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">What is your minimum order quantity?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">How do you ensure freshness during shipping?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">Are your roses certified for international export?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">Can I request custom packaging or branding?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">What is your lead time for bulk orders?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">Do you offer seasonal or limited-edition varieties?</span><i class="fas fa-chevron-down"></i></div>
+      <div class="faq-item"><span class="question">What payment and shipping terms do you offer?</span><i class="fas fa-chevron-down"></i></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="container py-12">
-  <div class="bg-primary rounded-3xl p-10 md:p-16 text-white relative overflow-hidden shadow-elegant">
-    <div style="position:absolute; right:-60px; top:-60px; width:200px; height:200px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
-    <div style="position:absolute; left:-40px; bottom:-40px; width:180px; height:180px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
-    <div class="relative grid md:grid-cols-[1.4fr_1fr] gap-8 items-center">
-      <div><h2 class="font-display text-4xl md:text-5xl leading-tight">Looking for premium export-quality roses?</h2><p class="text-white/80 mt-2">Browse our rose varieties or speak with our export team about bulk orders and international shipping.</p></div>
-      <div class="flex flex-wrap gap-3 md:justify-end"><a href="#contact" class="bg-white text-primary px-8 py-3 rounded-full font-medium hover:bg-white/90 transition">Request a Quote</a><a href="#contact" class="border border-white/40 text-white px-8 py-3 rounded-full font-medium hover:bg-white/10 transition">Contact Export Team</a></div>
+<section class="section-padding" style="padding-top:2rem;padding-bottom:4rem;">
+  <div class="container">
+    <div class="cta-box">
+      <div class="content">
+        <div>
+          <h2>Looking for premium export-quality roses?</h2>
+          <p>Browse our rose varieties or speak with our export team about bulk orders and international shipping.</p>
+        </div>
+        <div class="actions">
+          <a href="#contact" class="btn-white">Request a Quote</a>
+          <a href="#contact" class="btn-outline-white">Contact Export Team</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT + MAP ===== -->
-<section id="contact" class="bg-surface py-24">
-  <div class="container grid md:grid-cols-[1fr_1.2fr] gap-12">
-    <div>
-      <div class="text-xs uppercase tracking-widest text-primary">Contact</div>
-      <h2 class="font-display text-4xl md:text-5xl leading-tight mt-1">Speak with our export team</h2>
-      <p class="text-muted mt-3">Our team responds to all buyer inquiries within one business day. For urgent shipments, WhatsApp is fastest.</p>
-      <div class="space-y-4 mt-8">
-        <div class="flex items-start gap-4"><i class="fas fa-map-pin text-primary text-xl w-6 mt-1"></i><div><div class="text-xs uppercase text-muted">Location</div><div class="font-medium">Nairobi, Kenya (JKIA)</div></div></div>
-        <div class="flex items-start gap-4"><i class="fas fa-phone text-primary text-xl w-6 mt-1"></i><div><div class="text-xs uppercase text-muted">Phone</div><div class="font-medium">+254 792 248724</div></div></div>
-        <div class="flex items-start gap-4"><i class="fas fa-envelope text-primary text-xl w-6 mt-1"></i><div><div class="text-xs uppercase text-muted">Email</div><div class="font-medium">Canonroses878@gmail.com</div></div></div>
-        <div class="flex items-start gap-4"><i class="fab fa-whatsapp text-primary text-xl w-6 mt-1"></i><div><div class="text-xs uppercase text-muted">WhatsApp</div><div class="font-medium">+254 792 248724</div></div></div>
-        <div class="flex items-start gap-4"><i class="far fa-clock text-primary text-xl w-6 mt-1"></i><div><div class="text-xs uppercase text-muted">Business Hours</div><div class="font-medium">Mon – Fri · 07:00 – 18:00 EAT</div></div></div>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section-padding" style="background:var(--surface);">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:1fr 1.2fr;gap:4rem;">
+      <div>
+        <div class="sub" style="color:var(--primary);font-weight:600;">Contact</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem);line-height:1.1;">Speak with our export team</h2>
+        <p style="color:var(--text-muted);margin-top:0.5rem;">Our team responds to all buyer inquiries within one business day. For urgent shipments, WhatsApp is fastest.</p>
+        <div style="margin-top:2rem;">
+          <div class="contact-info-item"><i class="fas fa-map-pin"></i><div><div class="label">Location</div><div class="value">Nairobi, Kenya (JKIA)</div></div></div>
+          <div class="contact-info-item"><i class="fas fa-phone"></i><div><div class="label">Phone</div><div class="value">+254 792 248724</div></div></div>
+          <div class="contact-info-item"><i class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value">Canonroses878@gmail.com</div></div></div>
+          <div class="contact-info-item"><i class="fab fa-whatsapp"></i><div><div class="label">WhatsApp</div><div class="value">+254 792 248724</div></div></div>
+          <div class="contact-info-item"><i class="far fa-clock"></i><div><div class="label">Business Hours</div><div class="value">Mon – Fri · 07:00 – 18:00 EAT</div></div></div>
+        </div>
+        <div class="map-container" style="margin-top:2rem;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7784!2d36.9259!3d-1.3193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1179a7f0d7c3%3A0x3f7d4e2f3a2e7f3c!2sJomo%20Kenyatta%20International%20Airport!5e0!3m2!1sen!2ske!4v1710000000000" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
-      <!-- MAP (JKIA) -->
-      <div class="map-container mt-6">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7784!2d36.9259!3d-1.3193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1179a7f0d7c3%3A0x3f7d4e2f3a2e7f3c!2sJomo%20Kenyatta%20International%20Airport!5e0!3m2!1sen!2ske!4v1710000000000" allowfullscreen loading="lazy"></iframe>
-      </div>
+      <form class="bg-card rounded-3xl p-8 md:p-10 shadow-soft" style="border:1px solid var(--border);">
+        <div class="grid grid-cols-2" style="gap:1rem;">
+          <div class="form-group"><label>Full Name</label><input type="text" placeholder="Jane Doe" /></div>
+          <div class="form-group"><label>Company</label><input type="text" placeholder="Bloom Wholesale Ltd" /></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="jane@bloom.com" /></div>
+          <div class="form-group"><label>Phone</label><input type="tel" placeholder="+31 20 000 0000" /></div>
+          <div class="form-group"><label>Country</label><input type="text" placeholder="Netherlands" /></div>
+          <div class="form-group"><label>Order Volume (boxes/week)</label><input type="text" placeholder="e.g. 20" /></div>
+          <div class="form-group" style="grid-column:1/-1;"><label>Variety of Interest</label><input type="text" placeholder="Classic Red, Blush Pink, Bicolor…" /></div>
+          <div class="form-group" style="grid-column:1/-1;"><label>Message</label><textarea rows="4" placeholder="Tell us about your requirements, shipping destination and preferred lead time."></textarea></div>
+        </div>
+        <button type="submit" class="btn-primary w-full" style="justify-content:center;margin-top:0.5rem;">Send Inquiry <i class="fas fa-arrow-right"></i></button>
+        <p style="font-size:0.8rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">We respond within one business day.</p>
+      </form>
     </div>
-    <!-- FORM -->
-    <form class="bg-background rounded-3xl p-8 md:p-10 shadow-soft">
-      <div class="grid grid-cols-2 gap-4">
-        <div><label>Full Name</label><input type="text" placeholder="Jane Doe"></div>
-        <div><label>Company</label><input type="text" placeholder="Bloom Wholesale Ltd"></div>
-        <div><label>Email</label><input type="email" placeholder="jane@bloom.com"></div>
-        <div><label>Phone</label><input type="tel" placeholder="+31 20 000 0000"></div>
-        <div><label>Country</label><input type="text" placeholder="Netherlands"></div>
-        <div><label>Order Volume (boxes/week)</label><input type="text" placeholder="e.g. 20"></div>
-        <div class="col-span-2"><label>Variety of Interest</label><input type="text" placeholder="Classic Red, Blush Pink, Bicolor…"></div>
-        <div class="col-span-2"><label>Message</label><textarea rows="4" placeholder="Tell us about your requirements, shipping destination and preferred lead time."></textarea></div>
-      </div>
-      <button type="submit" class="btn-primary w-full mt-6 justify-center text-base py-3">Send Inquiry <i class="fas fa-arrow-right ml-2"></i></button>
-      <p class="text-xs text-muted text-center mt-3">We respond within one business day.</p>
-    </form>
   </div>
+  @media (max-width:768px) {
+    #contact .grid { grid-template-columns:1fr; gap:2rem; }
+  }
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="border-t bg-background py-12">
-  <div class="container grid md:grid-cols-4 gap-8">
-    <div><div class="flex items-center gap-2"><i class="fas fa-leaf text-primary text-2xl"></i><span class="font-display text-2xl font-semibold">Canon Roses</span></div><p class="text-sm text-muted mt-3">Premium Kenyan fresh-cut roses, cultivated and cold-chain exported to floral businesses worldwide.</p></div>
-    <div><div class="text-xs uppercase font-semibold tracking-widest">Explore</div><ul class="space-y-2 text-sm text-muted mt-3"><li><a href="#top">Home</a></li><li><a href="#varieties">Varieties</a></li><li><a href="#products">Products</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul></div>
-    <div><div class="text-xs uppercase font-semibold tracking-widest">Buyer</div><ul class="space-y-2 text-sm text-muted mt-3"><li><a href="#">Export Terms</a></li><li><a href="#">Shipping & Logistics</a></li><li><a href="#">Certifications</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">FAQs</a></li></ul></div>
-    <div><div class="text-xs uppercase font-semibold tracking-widest">Newsletter</div><p class="text-sm text-muted mt-2">Seasonal availability, novelty varieties and export updates.</p><div class="flex gap-2 mt-3"><input type="email" placeholder="you@company.com" style="flex:1;"><button class="btn-primary px-4 py-2 text-sm">Join</button></div></div>
-  </div>
-  <div class="container border-t mt-12 pt-6 text-xs text-muted flex flex-col md:flex-row justify-between">
-    <div>© 2026 Canon Roses Ltd. All rights reserved. Nairobi, Kenya.</div>
-    <div>Proof of Concept — WordPress + WooCommerce design demonstration.</div>
+<footer class="footer">
+  <div class="container">
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      <div class="brand">
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <i class="fas fa-seedling" style="color:var(--primary);font-size:1.75rem;"></i>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:700;">Canon Roses</span>
+        </div>
+        <p>Premium Kenyan fresh-cut roses, cultivated and cold-chain exported to floral businesses worldwide.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#top">Home</a></li><li><a href="#varieties">Varieties</a></li><li><a href="#products">Products</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Buyer</h4>
+        <ul><li><a href="#">Export Terms</a></li><li><a href="#">Shipping &amp; Logistics</a></li><li><a href="#">Certifications</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">FAQs</a></li></ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p style="color:var(--text-muted);font-size:0.9rem;">Seasonal availability, novelty varieties and export updates.</p>
+        <div class="newsletter-input">
+          <input type="email" placeholder="you@company.com" />
+          <button>Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Canon Roses Ltd. All rights reserved. Nairobi, Kenya.</div>
+      <div>Proof of Concept — WordPress + WooCommerce design demonstration.</div>
+    </div>
   </div>
 </footer>
 
